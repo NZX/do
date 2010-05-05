@@ -112,7 +112,14 @@ if RUBY_PLATFORM !~ /java/
 
       class Connection
         def self.oci8_new(user, password, connect_string)
-          OCI8.new(user, password, connect_string)
+          OCI8.new(user, password, connect_string).tap do |x|
+            x.instance_eval do
+              def log(*args)
+                # Ignore. I needed this method for DM 10.2
+                # It's not usually useful
+              end
+            end
+          end
         rescue OCIError => e
           raise ConnectionError.new(e.message, e.code, nil, nil, @connection.to_s)
         end
