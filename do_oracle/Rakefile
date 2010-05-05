@@ -20,7 +20,7 @@ begin
   require 'jeweler'
 
   Jeweler::Tasks.new do |gem|
-    gem.name        = 'do_oracle'
+    gem.name        = 'nzx-do_oracle'
     gem.version     = DataObjects::Oracle::VERSION
     gem.summary     = 'DataObjects Oracle Driver'
     gem.description = 'Implements the DataObjects API for Oracle'
