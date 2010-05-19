@@ -36,7 +36,7 @@ begin
     # and modify dependencies and extensions appropriately
     gem.extensions << 'ext/do_oracle/extconf.rb'
 
-    gem.add_dependency 'data_objects', DataObjects::Oracle::VERSION
+    gem.add_dependency 'data_objects', '0.10.2' # DataObjects::Oracle::VERSION
     gem.add_dependency 'ruby-oci8',    '~>2.0'
 
     gem.add_development_dependency 'bacon',         '~>1.1'
